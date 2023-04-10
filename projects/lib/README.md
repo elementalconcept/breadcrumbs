@@ -16,7 +16,8 @@ With Yarn:
 yarn add @elemental-concept/breadcrumbs
 ```
 
-Simply add the `import` into the component or add `BreadcrumbsModule` to the `xx.module.ts` to be able to use it.
+Add the `BreadcrumbsModule` into the component imports to be able to use it.
+Make sure the project is using `Routing`.
 
 ```typescript
 import { BreadcrumbsModule } from '@elemental-concept/breadcrumbs';
@@ -35,7 +36,7 @@ export class TestModule { }
 
 ## Usage
 
-To use the component you only need a simple list of crumbs.
+To use the component you only need a list of crumbs.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -44,7 +45,7 @@ import { Breadcrumb } from '@elemental-concept/breadcrumbs';
 
 @Component({
   selector: 'app-breadcrumbs-page',
-  template: '<ec-breadcrumbs [breadcrumbs]="breadcrumbs" separator="/"></ec-breadcrumbs>',
+  template: '<breadcrumbs [breadcrumbs]="breadcrumbs" separator="/"></breadcrumbs>',
   styleUrls: [ './breadcrumbs-page.component.scss' ]
 })
 export class BreadcrumbsPageComponent {
@@ -57,34 +58,30 @@ export class BreadcrumbsPageComponent {
 
 No spaces are added by default, so the output will be:
 ```text
-Home/Breadcrumb Example
+Home|Breadcrumb Example
 ```
 
 ## Style
 
-To change the css style just use css variables into your main `style.scss` file.
+To change the css style just use css variables into your main `style.scss` file or into your component.
 Here the default values:
 
 ```scss
 :root {
   --breadcrumb-inactive-color: black;
   --breadcrumb-active-color: lightgray;
+  --breadcrumb-separator-color: black;
+  --breadcrumb-separator-padding: 8px;
+  --breadcrumb-text-margin: 0;
+  --breadcrumb-text-font-family: "Helvetica", sans-serif;
 }
-```
-
-## Advanced
-
-If you want to change the look and feel of the breadcrumb,
-use the `breadcrumb` for both cases or just `no-link` or `link` for the specific case,
-and use `separator` for the separator.
-
-```html
-  <div class="breadcrumb no-link">
-    <p>{{ breadcrumb.label }}</p>
-  </div>
-
-  <div class="breadcrumb link">
-    <p [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</p>
-    <p class="separator">{{ separator }}</p>
-  </div>
+// OR
+:host {
+  --breadcrumb-inactive-color: black;
+  --breadcrumb-active-color: lightgray;
+  --breadcrumb-separator-color: black;
+  --breadcrumb-separator-padding: 8px;
+  --breadcrumb-text-margin: 0;
+  --breadcrumb-text-font-family: "Helvetica", sans-serif;
+}
 ```
