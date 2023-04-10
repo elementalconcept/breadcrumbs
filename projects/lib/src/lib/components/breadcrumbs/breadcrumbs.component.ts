@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 
 import { Breadcrumb, BREADCRUMB_SEPARATOR } from '../../models/breadcrumbs.types';
 
@@ -9,5 +9,10 @@ import { Breadcrumb, BREADCRUMB_SEPARATOR } from '../../models/breadcrumbs.types
 })
 export class BreadcrumbsComponent {
   @Input() breadcrumbs: Breadcrumb[] = [];
-  @Input() separator = BREADCRUMB_SEPARATOR;
+
+  separator: string;
+
+  constructor(@Inject(BREADCRUMB_SEPARATOR) private readonly breadcrumbSeparator: string) {
+    this.separator = breadcrumbSeparator;
+  }
 }

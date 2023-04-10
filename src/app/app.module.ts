@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { BreadcrumbsModule } from '@elemental-concept/breadcrumbs';
+import { BREADCRUMB_SEPARATOR, BreadcrumbsModule } from '@elemental-concept/breadcrumbs';
 
 import { AppComponent } from './app.component';
 
@@ -26,7 +26,9 @@ const routes: Routes = [
 
     BreadcrumbsModule
   ],
-  providers: [],
+  providers: [
+    { provide: BREADCRUMB_SEPARATOR, useValue: '/' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
