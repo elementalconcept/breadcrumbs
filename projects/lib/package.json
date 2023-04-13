@@ -1,0 +1,26 @@
+{
+  "name": "@elemental-concept/breadcrumbs",
+  "version": "0.0.1",
+  "description": "This library generates Angular `FormGroup` and related DOM from a specified JSON configuration.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elementalconcept/breadcrumbs.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Elemental Concept",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/elementalconcept/breadcrumbs/issues"
+  },
+  "homepage": "https://github.com/elementalconcept/breadcrumbs#readme",
+  "peerDependencies": {
+    "@angular/common": "> 11",
+    "@angular/core": "> 11",
+    "@angular/router": "> 11"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
