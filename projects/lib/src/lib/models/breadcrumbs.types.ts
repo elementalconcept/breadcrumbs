@@ -4,7 +4,7 @@ export interface Breadcrumb {
   label: string;
   url: string | null;
 
-  queryParams?: Record<string, string>;
+  queryParams?: Record<string, string> | undefined | null;
 }
 
 export const BREADCRUMB_SEPARATOR = new InjectionToken<string>(
