@@ -1,6 +1,6 @@
 {
   "name": "@elemental-concept/breadcrumbs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This library generates Angular `FormGroup` and related DOM from a specified JSON configuration.",
   "repository": {
     "type": "git",
