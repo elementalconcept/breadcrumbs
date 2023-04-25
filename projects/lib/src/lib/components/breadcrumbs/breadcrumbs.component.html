@@ -4,7 +4,11 @@
   </div>
 
   <div *ngIf="breadcrumb.url !== null" class="breadcrumb link">
-    <p [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</p>
+    <p [routerLink]="breadcrumb.url"
+       [queryParams]="breadcrumb.queryParams">
+      {{ breadcrumb.label }}
+    </p>
+
     <p class="separator">{{ separator }}</p>
   </div>
 </ng-container>
